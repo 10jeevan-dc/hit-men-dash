@@ -1,0 +1,110 @@
+.App {
+  text-align: center;
+  background-color: #282c34;
+  min-height: 100vh;
+}
+
+.App-header {
+  background-color: #282c34;
+  align-items: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  height: 80px;
+  padding-top: 40px;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+.App-container {
+  display: -webkit-flex; /* Safari */
+  display: flex;
+}
+
+.App-container-box{
+  -webkit-flex: 1;  /* Safari 6.1+ */
+  -ms-flex: 1;  /* IE 10 */  
+  flex: 1;
+  padding: 20px;
+}
+
+.App-section-header {
+  background-color: #282c34;
+  align-items: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  height: 60px;
+}
+
+.App-section-text{
+  background-color: #282c34;
+  font-size: calc(5px + 2vmin);
+  color: white;
+  height: 20px;
+  width: 400px;
+}
+
+.App-device-grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  padding: 6px;
+}
+
+.App-device-grid-item {
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
+}
+
+.App-device-grid-container img {
+  width: 50px
+}
+
+.App-mock-load-balancer-container {
+  display: flex;
+}
+
+.App-mock-load-balancer-line {
+  color: white;
+  font-size: 2rem;
+  margin-bottom: 100px;
+}
+
+.App-mock-load-balancer {
+  border: 2px solid white;
+  width: 40px;
+  height: 70%;
+  margin-top: 100px;
+  overflow-wrap: break-word;
+  color: white;
+  font-size: 2.14rem;
+}
+
+.App-mock-load-balancer-lines-container-left {
+  margin-top: 160px;
+  padding: 20px;
+}
+
+.App-mock-load-balancer-lines-container-right {
+  margin-top: 290px;
+  padding: 20px;
+}
+
+.App-special-button {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.App-mock-performance-chart-container {            
+  width: 820px;
+  height: 550px;
+}
