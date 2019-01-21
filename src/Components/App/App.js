@@ -105,6 +105,25 @@ class App extends Component {
     });
   }
 
+  componentDidMount() {
+    this.getPodsInfo()
+    setInterval(this.getPodsInfo, 1000);
+  }
+
+  getPodsInfo = async () => {
+    try {
+      const res = await fetch('http://35.244.37.99/pod/info');
+      const podsInfo = await res.json();
+      const podsNumber = podsInfo.number_of_pods;
+
+      this.setState({
+        podsNumber
+      })
+    } catch (error) {
+        // console.log(error);
+    }
+  }
+
   render() {
     const {podsNumber, devicesNumber, screenState} = this.state;
     return (
