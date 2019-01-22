@@ -16,7 +16,7 @@ class App extends Component {
   getMockDeviceGrid = (devicesNumber) => {
     const mockDevices = [];
     for(let i=0; i < devicesNumber; i+=1)
-      mockDevices.push(<div class="App-device-grid-item">
+      mockDevices.push(<div className="App-device-grid-item">
         <img src={mockPhone} alt={`mock_device_${i}`}/>
       </div>);
     const mockDeviceGrid = 
@@ -27,6 +27,7 @@ class App extends Component {
         mockDevices
       }
       </div>
+      <p className="App-section-header">{devicesNumber}</p>
     </div>);
     return mockDeviceGrid;
   }
@@ -106,18 +107,36 @@ class App extends Component {
   }
 
   componentDidMount() {
-    this.getPodsInfo()
+    this.getPodsInfo();
+    this.getPlayerCount();
     setInterval(this.getPodsInfo, 1000);
+    setInterval(this.getPlayerCount, 1000);
   }
 
   getPodsInfo = async () => {
     try {
       const res = await fetch('http://35.244.37.99/pod/info');
+      console.log(1);
       const podsInfo = await res.json();
       const podsNumber = podsInfo.number_of_pods;
 
       this.setState({
         podsNumber
+      })
+    } catch (error) {
+        // console.log(error);
+    }
+  }
+
+  getPlayerCount = async () => {
+    try {
+      const res = await fetch('http://35.244.175.228/info/player-count');
+      console.log(2);
+      const resJSON = await res.json();
+      const devicesNumber = resJSON.playerCount;
+
+      this.setState({
+        devicesNumber
       })
     } catch (error) {
         // console.log(error);
