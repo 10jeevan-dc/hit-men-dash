@@ -130,7 +130,7 @@ class App extends Component {
 
   getPlayerCount = async () => {
     try {
-      const res = await fetch('http://35.244.175.228/info/player-count');
+      const res = await fetch('http://35.244.247.204/info/player-count');
       console.log(2);
       const resJSON = await res.json();
       const devicesNumber = resJSON.playerCount;
